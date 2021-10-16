@@ -24,12 +24,22 @@ body {
     width: 500px;
     height: 150px;
     margin: 43px auto;
-    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    /* box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
     border-color: aliceblue;
     border-width: 100px;
     background-color: rgba(240, 248, 255, 0.048);
     border-bottom-left-radius: 300px;
-    border-bottom-right-radius: 300px;
+    border-bottom-right-radius: 300px; */
+}
+
+#progress {
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  border-color: aliceblue;
+  border-width: 100px;
+  background-color: #000511;
+  z-index: 10 !important;
+  height: 10%;
+  position: relative;
 }
 
 /* SRC: https://css-tricks.com/css3-progress-bars/ */
@@ -46,17 +56,17 @@ body {
     border-bottom-left-radius: 300px; */
 
     /* reservoir box */
-    /* box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
     border-color: aliceblue;
     border-width: 100px;
     background-color: rgba(240, 248, 255, 0.048);
     border-bottom-left-radius: 300px;
-    border-bottom-right-radius: 300px; */
+    border-bottom-right-radius: 300px;
   }
   .meter > span {
     display: block;
     width: 100%;
-    height: 20% !important;
+    height: 100% !important;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 300px;
     border-top-left-radius: 8px;
@@ -125,6 +135,8 @@ body {
     height: 140px;
     padding-left: 130px;
     width: 120px;
+    position: relative;
+    z-index: 100;
 }
 
 canvas {
