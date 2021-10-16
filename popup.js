@@ -13,7 +13,7 @@ facts = ["Water expands by 9% when it freezes!",
             "A manmade version of a lake is called a reservoir.", 
             "It is actually possible to convert seawater to freshwater via desalination!"]
 
-blacklist = ['instagram.com']
+blacklist = ['instagram.com', 'facebook.com', 'youtube.com', 'netflix.ca']
 
 
 // Display random fact from facts array
@@ -187,15 +187,41 @@ if(isCanvasSupported()){
 
 
 
-function timeoutUpdate(min, sec, inputTime) {
+
+
+// function chromeUpdates() {
+//     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { 
+//         chrome.tabs.query({active: true}, tabs => {
+//    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            // var tab = tabs[0];
+            // var url = new URL(tab.url)
+            // var domain = url.hostname
+//      })
+//              for (int i = blocklist.length; i >= 0; i--)
+//              {
+//                  if (host.equals())
+//              }
+//         })
+
+
+//     });
+
+//     chrome.tabs.onCreated.addListener(function(tab) {         
+    
+//     });
+
+// }
+
+
+var timeoutUpdate = function(min, sec, inputTime) {
     setTimeout(function() {
         if (sec < 10) {
             document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
-            console.log(min + ":" + "0" + sec);
+            // console.log(min + ":" + "0" + sec);
         }
         else {
             document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
-            console.log(min + ":" + sec);
+            // console.log(min + ":" + sec);
         }
         sec--;
         if (sec >= 0) {
@@ -203,21 +229,15 @@ function timeoutUpdate(min, sec, inputTime) {
             document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
         }
         else if (min > 0) {
-            
             timeoutUpdate(min - 1, 59);
         }
+        if (sec <= 0 && min <= 0) {
+            $('#restart').show();
+        }
     }, 1000)
-}
-
-function chromeUpdates() {
-    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { 
-        if 
-    });
-
-    chrome.tabs.onCreated.addListener(function(tab) {         
-    
-    });
-
+    // if (sec <= 0 && min <= 0) {
+    //     $('#restart').toggle();
+    // }
 }
 
 // Session -------------------------------------------------
@@ -225,21 +245,20 @@ document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
     inputTime = parseInt(inputTime)
 
-    chromeUpdates();
+    // chromeUpdates();
     
     if (Number.isInteger(inputTime) && inputTime > 0) {
         $('#session').toggle();
         $('#session2').toggle();
-        $('#restart').toggle();
+        $('#restart').hide();
         timeoutUpdate(inputTime - 1, 59, inputTime);
-        setTimeout(function() {
-            $('#restart').toggle()}
-            , (inputTime) * 60000)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
     }
 })
+
+
 
 document.getElementById("restart").addEventListener("click", () => {
     $('#session').toggle();
