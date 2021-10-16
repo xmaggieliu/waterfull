@@ -1,30 +1,59 @@
 body {
-  /* background: #000511;  */
-  color: white;
+  color: grey;
+  font-family: "Varela", sans-serif;
 }
 
 
 /* Timer -------------------------------------------- */
 #session, #session2 {
+  z-index: 100000;
   padding-left: 250px;
   position: absolute;
+  transform: translate(0px, -60px);
 }
 
 #session2 {
   display: none;
 }
 
-/* #restart {
-  display: none;
-} */
+#waterfull-timer {
+  border: #EA633C thick solid;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
 
 #input-time {
   padding: 10px;
   background-color: aliceblue;
+  border: #2D8F68 thick solid;
+  border-radius: 8px;
 }
 
-.btn-time, .btn-time:hover {
-  cursor: pointer !important;
+#input-time:hover{
+  outline: #57A36B solid 1px !important;
+  border-color: #57A36B;
+}
+
+#input-time:active, #input-time:focus {
+  outline: #7BD7A0 solid 1px !important;
+  border-color: #7BD7A0;
+}
+
+.btn-time {
+  border: #2D8F68 thick solid;
+  background-color: #2D8F68;
+  color: white;
+  margin: 2px;
+  padding: 10px 5px;
+  border-radius: 8px;
+}
+
+.btn-time:hover {
+  outline: #57A36B solid 5px !important;
+}
+
+.btn-time:active {
+  outline: #7BD7A0 solid 5px !important;
 }
 
 
@@ -33,22 +62,20 @@ body {
   width: 500px;
   height: 150px;
   margin: 100px auto;
-  /* box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
-  border-color: aliceblue;
-  border-width: 100px;
-  background-color: rgba(240, 248, 255, 0.048);
-  border-bottom-left-radius: 300px;
-  border-bottom-right-radius: 300px; */
 }
 
 #progress {
-box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
-border-color: aliceblue;
-border-width: 100px;
-background-color: #000511;
-z-index: 10 !important;
-height: 100%;
-position: relative;
+  box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);
+  border-color: aliceblue;
+  border-width: 100px;
+  background-color: #000511;
+  z-index: 10 !important;
+  height: 100%;
+  position: relative;
+}
+
+#p-error {
+  display: none;
 }
 
 /* SRC: https://css-tricks.com/css3-progress-bars/ */
@@ -56,13 +83,7 @@ position: relative;
   box-sizing: content-box;
   height: 150px; /* Can be anything */
   position: relative;
-  margin: 0 0 20px 0; /* Just for demo spacing */
-  /* original progress bar */
-  /* background: #555; */
-  /* border-top-right-radius: 8px;
-  border-bottom-right-radius: 300px;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 300px; */
+  margin: 0 0 20px 0;
 
   /* reservoir box */
   box-shadow: inset 0 -1px 1px rgba(255, 255, 255, 0.3);

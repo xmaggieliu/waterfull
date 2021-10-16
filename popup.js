@@ -209,8 +209,8 @@ function timeoutUpdate(min, sec, inputTime) {
 // Session -------------------------------------------------
 document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
-    if (Number.isInteger(inputTime) && parseInt(inputTime) > 0) {
-        inputTime = parseInt(inputTime)
+    inputTime = parseInt(inputTime)
+    if (Number.isInteger(inputTime) && inputTime > 0) {
         $('#session').toggle();
         $('#session2').toggle();
         $('#restart').toggle();
@@ -219,6 +219,9 @@ document.getElementById("begin").addEventListener("click", () => {
             $('#restart').toggle()}
             , (inputTime) * 60000)
     }    
+    else {
+        $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
+    }
 })
 
 document.getElementById("restart").addEventListener("click", () => {

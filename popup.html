@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -31,8 +32,8 @@
         </div>
 
         <div id="session2">
-            <label>Time left in current session:</label>
-            <p id="waterfull-timer"></p>
+            <p>Time left in current session:</p>
+            <button type="button" id="waterfull-timer"></button>
             <button class="btn-time" id="restart" type="button">Restart</button>
         </div>
         
@@ -40,6 +41,7 @@
             <div class="meter">
                 <span><div id="progress"></div></span> <!--  style="height: 25%"  -->
             </div>
+            <p id="p-error">Positive integer input only!</p>
         </div>
         
         
