@@ -1,13 +1,28 @@
+#reservoir {
+    width: 500px;
+    height: 150px;
+    border-color: aliceblue;
+    border-width: 100px;
+    background-color: rgba(240, 248, 255, 0.048);
+    top: 40%;
+    left: 0.5%;
+    position: absolute;
+    border-bottom-left-radius: 350px;
+    border-bottom-right-radius: 500px;
+}
+
+
 body {
     background: #000511; 
 }
 
 #container {
- box-shadow: inset 0 4px 0 #7f410d, 0 -1px 0 #000;
+ box-shadow: inset 0 4px 0 #524841, 0 -1px 0 #000;
  height: 140px;
  margin: -px 0 0 0px;
  position: absolute;
  width: 120px;
+ left: 4%;
 }
 
 canvas {
