@@ -185,24 +185,31 @@ if(isCanvasSupported()){
 
 btns = document.querySelectorAll(".btn-time");
 
+function timeoutUpdate(min, sec) {
+    setTimeout(function() {
+        if (sec < 10) {
+            console.log(min, ":", "0", sec)
+        }
+        else {
+            console.log(min, ":", sec)
+        }
+        sec--;
+        if (sec >= 0) {
+            timeoutUpdate(min, sec);
+        }
+        else if (min >= 0) {
+            timeoutUpdate(min - 1, 59)
+        }
+    }, 1000)
+}
+
 for (var k = 0; k < btns.length; k++) {
     // Session -------------------------------------------------
     btns[k].addEventListener("click", () => {
         inputTime = document.getElementById("input-time").value;
         console.log(inputTime)
         inputTime = parseInt(inputTime) - 1
-        for (var min = inputTime; min >= 0; min--) {
-            for (var sec = 59; sec >= 0; sec--) {
-                setTimeout(function() {
-                    if (sec < 10) {
-                        console.log(min, ":", "0", sec)
-                    }
-                    else {
-                        console.log(min, ":", sec)
-                    }
-                }, 1000)
-            }
-        }
+        timeoutUpdate(inputTime, 59);
     })
 }
 
