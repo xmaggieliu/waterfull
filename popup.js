@@ -198,15 +198,14 @@ if(isCanvasSupported()){
 //      })
 //              for (int i = blocklist.length; i >= 0; i--)
 //              {
-//                  if (host.equals())
+//                  if (host.equals(blocklist[i]))
+//                  {
+                        // Insert code here to wilt the progress
+//                  }
 //              }
 //         })
 
 
-//     });
-
-//     chrome.tabs.onCreated.addListener(function(tab) {         
-    
 //     });
 
 // }
