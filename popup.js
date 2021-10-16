@@ -184,7 +184,7 @@ if(isCanvasSupported()){
 
 
 
-function timeoutUpdate(min, sec) {
+function timeoutUpdate(min, sec, inputTime) {
     setTimeout(function() {
         if (sec < 10) {
             document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
@@ -196,26 +196,29 @@ function timeoutUpdate(min, sec) {
         }
         sec--;
         if (sec >= 0) {
-            timeoutUpdate(min, sec);
+            timeoutUpdate(min, sec, inputTime);
+            document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
         }
         else if (min > 0) {
-            timeoutUpdate(min - 1, 59)
+            
+            timeoutUpdate(min - 1, 59);
         }
     }, 1000)
 }
 
-    // Session -------------------------------------------------
+// Session -------------------------------------------------
 document.getElementById("begin").addEventListener("click", () => {
+    inputTime = document.getElementById("input-time").value;
+    if (Number.isInteger(inputTime) && parseInt(inputTime) > 0) {
+        inputTime = parseInt(inputTime)
         $('#session').toggle();
         $('#session2').toggle();
         $('#restart').toggle();
-        inputTime = document.getElementById("input-time").value;
-        console.log(inputTime)
-        inputTime = parseInt(inputTime) - 1
-        timeoutUpdate(inputTime, 59);
+        timeoutUpdate(inputTime - 1, 59, inputTime);
         setTimeout(function() {
             $('#restart').toggle()}
-            , (inputTime + 1) * 60000)
+            , (inputTime) * 60000)
+    }    
 })
 
 document.getElementById("restart").addEventListener("click", () => {
