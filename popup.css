@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+#session {
+    display: inline-flex;
+    z-index: 1000000000 !important;
+}
 
 #reservoir {
     width: 500px;
