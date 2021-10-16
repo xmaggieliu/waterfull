@@ -7,6 +7,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="popup.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
     <div class="modal-content">
@@ -24,13 +25,13 @@
         </div>
         
         <div id="session">
-            <label for="timer">Enter the duration of your session (min):</label>
+            <p>Enter the duration of your session (min):</p>
             <input type="number" name="timer" id="input-time" min="1">
             <button class="btn-time" type="button">Begin Session!</button>
         </div>
 
         <div id="session2">
-            <p>Time left in current session:</p>
+            <label>Time left in current session:</label>
             <p id="waterfull-timer">23:10</p>
             <button class="btn-time" type="button">End session now</button>
         </div>
