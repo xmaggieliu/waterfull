@@ -5,8 +5,12 @@ body {
 
 
 /* Timer -------------------------------------------- */
-#session {
+#session, #session2 {
     padding-left: 250px;
+}
+
+#session2 {
+  display: none;
 }
 
 #input-time {
@@ -14,7 +18,7 @@ body {
     background-color: aliceblue;
 }
 
-#btn-time, #btn-time:hover {
+.btn-time, .btn-time:hover {
     cursor: pointer !important;
 }
 
