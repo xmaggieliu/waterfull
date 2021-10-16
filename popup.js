@@ -191,11 +191,10 @@ if(isCanvasSupported()){
 
 // function chromeUpdates() {
 //     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { 
-//         chrome.tabs.query({active: true}, tabs => {
-//    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-            // var tab = tabs[0];
-            // var url = new URL(tab.url)
-            // var domain = url.hostname
+//          chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+                // var tab = tabs[0];
+                // var url = new URL(tab.url)
+                // var domain = url.hostname
 //      })
 //              for (int i = blocklist.length; i >= 0; i--)
 //              {
@@ -235,9 +234,6 @@ var timeoutUpdate = function(min, sec, inputTime) {
             $('#restart').show();
         }
     }, 1000)
-    // if (sec <= 0 && min <= 0) {
-    //     $('#restart').toggle();
-    // }
 }
 
 // Session -------------------------------------------------
