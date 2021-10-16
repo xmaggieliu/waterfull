@@ -183,33 +183,42 @@ if(isCanvasSupported()){
 
 
 
-btns = document.querySelectorAll(".btn-time");
 
 function timeoutUpdate(min, sec) {
     setTimeout(function() {
         if (sec < 10) {
-            console.log(min, ":", "0", sec)
+            document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
+            console.log(min + ":" + "0" + sec);
         }
         else {
-            console.log(min, ":", sec)
+            document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
+            console.log(min + ":" + sec);
         }
         sec--;
         if (sec >= 0) {
             timeoutUpdate(min, sec);
         }
-        else if (min >= 0) {
+        else if (min > 0) {
             timeoutUpdate(min - 1, 59)
         }
     }, 1000)
 }
 
-for (var k = 0; k < btns.length; k++) {
     // Session -------------------------------------------------
-    btns[k].addEventListener("click", () => {
+document.getElementById("begin").addEventListener("click", () => {
+        $('#session').toggle();
+        $('#session2').toggle();
+        $('#restart').toggle();
         inputTime = document.getElementById("input-time").value;
         console.log(inputTime)
         inputTime = parseInt(inputTime) - 1
         timeoutUpdate(inputTime, 59);
-    })
-}
+        setTimeout(function() {
+            $('#restart').toggle()}
+            , (inputTime + 1) * 60000)
+})
 
+document.getElementById("restart").addEventListener("click", () => {
+    $('#session').toggle();
+    $('#session2').toggle();
+})

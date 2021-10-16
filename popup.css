@@ -14,6 +14,10 @@ body {
   display: none;
 }
 
+/* #restart {
+  display: none;
+} */
+
 #input-time {
   padding: 10px;
   background-color: aliceblue;
