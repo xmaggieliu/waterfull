@@ -9,25 +9,33 @@
     <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-    <div class="modal-header">
-        <h1 class="logo">
-            <img src="" alt="Waterfull" class="logo-icon"> Waterfull <span class="version">(1.0.0)</span>
-        </h1>
-    </div>
-
     <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <h1 class="logo">
+                <img src="icon_50.png" alt="Waterfull" class="logo-icon"> Waterfull <span class="version">(1.0.0)</span>
+            </h1>
+        </div>
         <p>Boost your productivity while enjoying the beauty of water!</p>
+        <p id="fun-fact"></p>
 
         <div id="container">
             <canvas id="waterfall"></canvas>
         </div>
         
-        <div id="reservoir"></div>
-
         <div id="session">
-            <input type="time" name="time" id="time-input">
-            <button id="btn-time"></button>
+            <label for="timer">Enter the duration of your session (min):</label>
+            <input type="number" name="timer" id="input-time" min="1">
+            <button id="btn-time" type="button">Begin Session!</button>
         </div>
+        
+        <div id="reservoir">
+            <div class="meter">
+                <span></span> <!--  style="height: 25%"  -->
+            </div>
+        </div>
+        
+        
     </div>
     
     <script src="popup.js"></script>

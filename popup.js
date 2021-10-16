@@ -13,7 +13,9 @@ facts = ["Water expands by 9% when it freezes!",
             "A manmade version of a lake is called a reservoir.", 
             "It is actually possible to convert seawater to freshwater via desalination!"]
 
-
+// Display random fact from facts array
+const fact = facts[Math.floor(Math.random() * facts.length)];
+document.getElementById("fun-fact").innerHTML = fact;
 
 
 
@@ -176,3 +178,26 @@ if(isCanvasSupported()){
     setupRAF();
     waterfall.init();
 }
+
+// ---------------------------------- END OF SRC
+
+
+// Progress bar: https://css-tricks.com/css3-progress-bars/
+$(".meter > span").each(function () {
+    $(this)
+      .data("origWidth", $(this).width())
+      .width(0)
+      .animate(
+        {
+          width: $(this).data("origWidth")
+        },
+        1200
+      );
+});
+
+
+// Session -------------------------------------------------
+document.getElementById("btn-time").addEventListener("click", () => {
+    inputTime = document.getElementById("input-time").value;
+    console.log(inputTime)
+})
