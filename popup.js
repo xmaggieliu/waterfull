@@ -198,7 +198,7 @@ if(isCanvasSupported()){
 //      })
 //              for (int i = blocklist.length; i >= 0; i--)
 //              {
-//                  if (host.equals(blocklist[i]))
+//                  if (host === blocklist[i])
 //                  {
                         // Insert code here to wilt the progress
 //                  }
