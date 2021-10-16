@@ -13,6 +13,9 @@ facts = ["Water expands by 9% when it freezes!",
             "A manmade version of a lake is called a reservoir.", 
             "It is actually possible to convert seawater to freshwater via desalination!"]
 
+blacklist = ['instagram.com']
+
+
 // Display random fact from facts array
 const fact = facts[Math.floor(Math.random() * facts.length)];
 document.getElementById("fun-fact").innerHTML = fact;
@@ -206,10 +209,24 @@ function timeoutUpdate(min, sec, inputTime) {
     }, 1000)
 }
 
+function chromeUpdates() {
+    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { 
+        if 
+    });
+
+    chrome.tabs.onCreated.addListener(function(tab) {         
+    
+    });
+
+}
+
 // Session -------------------------------------------------
 document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
     inputTime = parseInt(inputTime)
+
+    chromeUpdates();
+    
     if (Number.isInteger(inputTime) && inputTime > 0) {
         $('#session').toggle();
         $('#session2').toggle();
