@@ -187,6 +187,7 @@ if(isCanvasSupported()){
 function chromeUpdate() {
    function clearProgress() {
         clearInterval(timer);
+        $('#restart').show();
     }
 
     browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
