@@ -196,15 +196,15 @@ function chromeUpdate() {
             frameElements.style.display = "none";            
         });
         $('#restart').show();
-        chrome.runtime.sendMessage('', {
-            type: 'notification',
-            options: {
-            title: 'Paradise lost!',
-            message: 'You went on one of the blocked websites on Waterfull. Progress has been reset. :(',
-            iconUrl: 'icon_80.png',
-            type: 'basic'
-          }
-        });
+        // chrome.runtime.sendMessage('', {
+        //     type: 'notification',
+        //     options: {
+        //     title: 'Paradise lost!',
+        //     message: 'You went on one of the blocked websites on Waterfull. Progress has been reset. :(',
+        //     iconUrl: 'icon_80.png',
+        //     type: 'basic'
+        //   }
+        // });
     }
 
     browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
