@@ -265,7 +265,6 @@ h1 {
 /* Waterfall ------------------------------------------ */
 #container {
   box-shadow: inset 0 4px 0 #524841, 0 -1px 0 #000;
-  border-radius: 5px;
   height: 140px;
   padding-left: 142px;
   width: 120px;
