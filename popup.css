@@ -1,8 +1,15 @@
 body {
+  background: rgb(196, 234, 251);
   color: grey;
   font-family: "Varela", sans-serif;
 }
 
+/* Desert Background -------------------------------------------- */ 
+.desert {
+  position: relative;
+  top: 0;
+  left: 0;
+}
 
 /* Timer -------------------------------------------- */
 #session, #session2 {
