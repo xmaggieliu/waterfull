@@ -11,8 +11,14 @@ body {
   left: 0;
 }
 
-.desert-1, .desert-2, .desert-3, .desert-4 {
+.desert-1 {
   position: relative;
+  top: 0;
+  left: 0;
+}
+
+.desert-2, .desert-3, .desert-4 {
+  position: absolute;
   top: 0;
   left: 0;
 }
