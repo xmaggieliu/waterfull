@@ -196,7 +196,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll(".progress").forEach(frameElements => {
                 frameElements.style.display = "none";            
             });
-            $('#restart').show();
+            // $('#restart').show();
+            document.getElementById("restart").display = "block";
             chrome.runtime.sendMessage('', {
                 type: 'notification',
                 options: {
@@ -227,9 +228,12 @@ document.addEventListener('DOMContentLoaded', function () {
             var min = inputTime - 1;
             var sec = 59;
             var frame = 5;
-            $('#session').toggle();
-            $('#session2').toggle();
-            $('#restart').hide();
+            // $('#session').toggle();
+            document.getElementById("session").display = "none";
+            // $('#session2').toggle();
+            document.getElementById("session2").display = "block";
+            // $('#restart').hide();
+            document.getElementById("restart").display = "none";
             var timer = setInterval(function() {
                 if (sec < 10) {
                     document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
@@ -254,20 +258,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 
                 if (sec < 0 && min <= 0) {
                     document.getElementById('progress1').style.display = "block";
-                    $('#restart').show();
+                    // $('#restart').show();
+                    document.getElementById("restart").display = "block";
                     clearInterval(timer);
                 }
             }, 1000, min, sec, frame)
         }    
         else {
-            $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
+            // $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
+            document.getElementById("p-error").display = "block";
+            setTimeout(function () {
+                document.getElementById("p-error").display = "none";
+            }, 1500)
         }
     })
 
 
 
     document.getElementById("restart").addEventListener("click", () => {
-        $('#session').toggle();
-        $('#session2').toggle();
+        // $('#session').toggle();
+        document.getElementById("session").display = "block";
+        document.getElementById("session2").display = "none";
+        // $('#session2').toggle();
     })
 })

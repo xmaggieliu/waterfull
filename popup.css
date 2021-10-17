@@ -80,7 +80,7 @@ h1 {
 }
 
 .modal-content {
-  margin: 20px; /* maybe del later?????? and line below too*/
+  /* margin: 20px; maybe del later?????? and line below too */
   background-color: rgb(196, 234, 251);  
   border: 1px solid #888;
   width: 600px; 
