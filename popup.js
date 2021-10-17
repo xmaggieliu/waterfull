@@ -188,7 +188,20 @@ if(isCanvasSupported()){
 
 
 
+/* 
+* const pattern1 = "https://twitter.com/*";
+const pattern2 = "https://instagram.com/*";
 
+const filter = {
+  urls: [pattern1, pattern2]
+}
+
+function clearProgress() {
+  clearInterval(timer);
+}
+
+browser.tabs.onUpdated.addListener(clearProgress, filter);
+**/
 // function chromeUpdates() {
 //     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { 
 //          chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
@@ -218,7 +231,8 @@ document.getElementById("begin").addEventListener("click", () => {
     if (Number.isInteger(inputTime) && inputTime > 0) {
         // chromeUpdates();
         var min = inputTime - 1;
-        var sec = 59
+        var sec = 59;
+        var frame = 6;
         $('#session').toggle();
         $('#session2').toggle();
         $('#restart').hide();
@@ -242,12 +256,18 @@ document.getElementById("begin").addEventListener("click", () => {
                 min--;
                 sec = 59;
             }
+
+            if (min * frame == inputTime) {
+                frameId = "progress" + frame
+                console.log(frameId)
+                document.getElementById(frameId).style.display = "block";
+            }
             
             if (sec < 0 && min <= 0) {
                 $('#restart').show();
                 clearInterval(timer);
             }
-        }, 1000, min, sec)
+        }, 1000, min, sec, frame)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');

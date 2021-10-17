@@ -8,6 +8,10 @@ body {
   position: relative;
 }
 
+.progress {
+  display: none;
+}
+
 .desert-1 {
   position: absolute;
 }
@@ -49,6 +53,14 @@ body {
   z-index: 10000000000000000;
   background-color: rgb(196, 234, 251, 70%);
   padding-bottom: 5px; 
+}
+
+.logo-icon {
+  border-radius: 3px;
+}
+
+h1 > img > span, h1 > img {
+  vertical-align: middle;
 }
 
 .modal-content {
