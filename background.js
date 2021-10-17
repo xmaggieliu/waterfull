@@ -20,7 +20,12 @@ const blocklist = ['https://instagram.com/*', 'https://facebook.com/*', 'https:/
 const fact = facts[Math.floor(Math.random() * facts.length)];
 document.getElementById("fun-fact").innerHTML = "Fun fact: " + fact;
 
-
+//Notification creation
+chrome.runtime.onMessage.addListener(data => {
+    if (data.type === 'notification') {
+      chrome.notifications.create('', data.options);
+    }
+  });
 
 // Waterfall script ----------------------- SOURCE: https://codepen.io/nrmarston/pen/Jefaz
 
