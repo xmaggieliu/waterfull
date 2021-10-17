@@ -189,26 +189,26 @@ if(isCanvasSupported()){
 
 // ---------------------------------- END OF SRC
 
-function chromeUpdate() {
-   function clearProgress() {
-        clearInterval(timer);
-        document.querySelectorAll(".progress").forEach(frameElements => {
-            frameElements.style.display = "none";            
-        });
-        $('#restart').show();
-        // chrome.runtime.sendMessage('', {
-        //     type: 'notification',
-        //     options: {
-        //     title: 'Paradise lost!',
-        //     message: 'You went on one of the blocked websites on Waterfull. Progress has been reset. :(',
-        //     iconUrl: 'icon_80.png',
-        //     type: 'basic'
-        //   }
-        // });
-    }
+// function chromeUpdate() {
+//    function clearProgress() {
+//         clearInterval(timer);
+//         document.querySelectorAll(".progress").forEach(frameElements => {
+//             frameElements.style.display = "none";            
+//         });
+//         $('#restart').show();
+//         // chrome.runtime.sendMessage('', {
+//         //     type: 'notification',
+//         //     options: {
+//         //     title: 'Paradise lost!',
+//         //     message: 'You went on one of the blocked websites on Waterfull. Progress has been reset. :(',
+//         //     iconUrl: 'icon_80.png',
+//         //     type: 'basic'
+//         //   }
+//         // });
+//     }
 
-    browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
-}
+//     browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
+// }
     
 
 // Session -------------------------------------------------
@@ -217,7 +217,7 @@ document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
     inputTime = parseInt(inputTime)
 
-    chromeUpdate();
+    // chromeUpdate();
 
     if (Number.isInteger(inputTime) && inputTime > 0) {
         document.querySelectorAll(".progress").forEach(frameElements => {
@@ -225,7 +225,7 @@ document.getElementById("begin").addEventListener("click", () => {
         });
         var min = inputTime - 1;
         var sec = 59;
-        var frame = 6;
+        var frame = 5;
         $('#session').toggle();
         $('#session2').toggle();
         $('#restart').hide();
@@ -245,18 +245,18 @@ document.getElementById("begin").addEventListener("click", () => {
                 sec = 59;
             }
 
-            console.log(inputTime, (min * 60 + sec) * frame)
-            if ((min * 60 + sec) * frame == inputTime * 60) {
-                frameId = "progress" + frame
-                console.log(frameId)
+            if ((min * 60 + sec) * 6 / frame == inputTime * 60) {
+                frameId = "progress" + (frame+1);
                 document.getElementById(frameId).style.display = "block";
+                frame--;
             }
             
             if (sec < 0 && min <= 0) {
+                document.getElementById('progress1').style.display = "block";
                 $('#restart').show();
                 clearInterval(timer);
             }
-        }, 1000, min, sec, frame)
+        }, 100, min, sec, frame)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
