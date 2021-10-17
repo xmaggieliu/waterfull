@@ -267,7 +267,7 @@ document.getElementById("begin").addEventListener("click", () => {
                 $('#restart').show();
                 clearInterval(timer);
             }
-        }, 1000, min, sec, frame)
+        }, 100, min, sec, frame)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
