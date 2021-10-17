@@ -187,6 +187,9 @@ if(isCanvasSupported()){
 function chromeUpdate() {
    function clearProgress() {
         clearInterval(timer);
+        document.querySelectorAll(".progress").forEach(frameElements => {
+            frameElements.style.display = "none";            
+        });
         $('#restart').show();
     }
 
@@ -202,6 +205,9 @@ document.getElementById("begin").addEventListener("click", () => {
     chromeUpdate();
 
     if (Number.isInteger(inputTime) && inputTime > 0) {
+        document.querySelectorAll(".progress").forEach(frameElements => {
+            frameElements.style.display = "none";            
+        });
         // chromeUpdates();
         var min = inputTime - 1;
         var sec = 59;
@@ -241,7 +247,7 @@ document.getElementById("begin").addEventListener("click", () => {
                 $('#restart').show();
                 clearInterval(timer);
             }
-        }, 100, min, sec, frame)
+        }, 1000, min, sec, frame)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');

@@ -2,6 +2,7 @@ body {
   color: black;
   font-family: "Varela", sans-serif;
   font-size: 11px;
+  line-height: 2px;
 }
 
 /* Background img -------------------------------------------- */ 
@@ -9,7 +10,7 @@ body {
   position: relative;
 }
 
-.progress {
+.progress, #death-msg {
   display: none;
 }
 
