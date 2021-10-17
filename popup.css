@@ -20,6 +20,14 @@ body {
   animation: pulse 5s infinite;
 }
 
+.desert-3 {
+  animation-delay: 0.5s;
+}
+
+.desert-4 {
+  animation-delay: 0.7s;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1.03);
