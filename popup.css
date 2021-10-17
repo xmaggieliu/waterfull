@@ -44,9 +44,11 @@ body {
 /* Timer -------------------------------------------- */
 #session, #session2 {
   z-index: 100000;
-  padding-left: 250px;
   position: absolute;
-  transform: translate(0px, -60px);
+  transform: translate(250px, -60px);
+  background-color: rgb(256, 256, 256, 35%);
+  padding: 10px;
+  border-radius: 4px;
 }
 
 #session2 {
@@ -219,6 +221,7 @@ canvas {
   background-color: rgb(196, 234, 251, 50%);
   padding-bottom: 5px; 
 }
+
 
 /* Modal Content/Box ---------------------------------------------------------*/
   .modal-content {
