@@ -235,7 +235,7 @@ document.getElementById("begin").addEventListener("click", () => {
             sec--;
             if (sec >= 0) {
                 // timeoutUpdate(min, sec, inputTime);
-                document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
+                document.getElementById("progress-bar").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
             }
             else if (min > 0) {
                 // timeoutUpdate(min - 1, 59);
