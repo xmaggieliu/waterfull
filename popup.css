@@ -1,34 +1,16 @@
 body {
   background: rgb(196, 234, 251);
-  color: grey;
+  color: black;
   font-family: "Varela", sans-serif;
 }
 
 /* Desert Background -------------------------------------------- */ 
 .desert {
-  position: relative;
-  top: 0;
-  left: 0;
+  position: absolute;
 }
 
 .desert-1 {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.97);
-  }
-
-  50% {
-    transform: scale(1)
-  }
-
-  100% {
-    transform: scale(0.97);
-  }
+  position: absolute;
 }
 
 .desert-2, .desert-3, .desert-4 {
@@ -36,6 +18,20 @@ body {
   top: 0;
   left: 0;
   animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.03);
+  }
+
+  50% {
+    transform: scale(1)
+  }
+
+  100% {
+    transform: scale(1.03);
+  }
 }
 
 /* Timer -------------------------------------------- */
@@ -208,11 +204,14 @@ canvas {
   margin: 0 auto;
 }
 
+.modal-header {
+  padding: 0 20px;
+}
 
 /* Modal Content/Box ---------------------------------------------------------*/
   .modal-content {
-  background-color: #000511; 
-  padding: 20px;
+  /* background-color: #000511;  */
+  margin: 20px; /* maybe del later?????? and line below too*/
   border: 1px solid #888;
   width: 600px; 
   height: 600px;
