@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ---------------------------------- END OF SRC
 
     function chromeUpdate() {
-    function clearProgress() {
+        function clearProgress() {
             clearInterval(timer);
             document.querySelectorAll(".progress").forEach(frameElements => {
                 frameElements.style.display = "none";            
@@ -210,6 +210,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         chrome.tabs.onUpdated.addListener(clearProgress, blocklist); 
+        // chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
+        //     let url = tabs[0].url;
+        //     for (var a = 0; a < blocklist.length; a++) {
+        //         if (url == blocklist[a]) {
+        //             clearProgress();
+        //         }
+        //     }
+        // });
     }
         
 
