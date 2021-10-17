@@ -3,7 +3,6 @@
     "name": "Waterfull",
     "description": "Stay on-task as you learn about water and watch your paradise bloom!",
     "version": "1.0.0",
-    "icons": {"128": "icon_128.png"},
     "browser_action": 
     {
         "default_icon": "icon.png",
