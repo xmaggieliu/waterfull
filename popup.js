@@ -200,7 +200,7 @@ if(isCanvasSupported()){
 //              {
 //                  if (host === blocklist[i])
 //                  {
-                        // Insert code here to wilt the progress
+                        // clearInterval(timer);
 //                  }
 //              }
 //         })
@@ -208,31 +208,6 @@ if(isCanvasSupported()){
 
 //     });
 
-// }
-
-
-// var timeoutUpdate = function(min, sec, inputTime) {
-//     setTimeout(function() {
-//         if (sec < 10) {
-//             document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
-//             // console.log(min + ":" + "0" + sec);
-//         }
-//         else {
-//             document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
-//             // console.log(min + ":" + sec);
-//         }
-//         sec--;
-//         if (sec >= 0) {
-//             timeoutUpdate(min, sec, inputTime);
-//             document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
-//         }
-//         else if (min > 0) {
-//             timeoutUpdate(min - 1, 59);
-//         }
-//         if (sec <= 0 && min <= 0) {
-//             $('#restart').show();
-//         }
-//     }, 1000)
 // }
 
 // Session -------------------------------------------------

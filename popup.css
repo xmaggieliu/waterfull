@@ -3,10 +3,6 @@ body {
   font-family: "Varela", sans-serif;
 }
 
-.modal-content {
-  background-color: rgb(196, 234, 251);  
-}
-
 /* Desert Background -------------------------------------------- */ 
 .desert {
   position: absolute;
@@ -223,6 +219,7 @@ canvas {
   .modal-content {
   /* background-color: #000511;  */
   margin: 20px; /* maybe del later?????? and line below too*/
+  background-color: rgb(196, 234, 251);  
   border: 1px solid #888;
   width: 600px; 
   height: 600px;
