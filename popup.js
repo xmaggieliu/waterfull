@@ -259,16 +259,19 @@ document.getElementById("begin").addEventListener("click", () => {
             }
             sec--;
             if (sec >= 0) {
-                timeoutUpdate(min, sec, inputTime);
+                // timeoutUpdate(min, sec, inputTime);
                 document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
             }
             else if (min > 0) {
-                timeoutUpdate(min - 1, 59);
+                // timeoutUpdate(min - 1, 59);
+                min--;
+                sec = 59;
             }
             if (sec <= 0 && min <= 0) {
                 $('#restart').show();
+                clearInterval(timer);
             }
-        }, 1000)
+        }, 1000, min, sec)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');
