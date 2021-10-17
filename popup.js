@@ -13,7 +13,7 @@ facts = ["Water expands by 9% when it freezes!",
             "A manmade version of a lake is called a reservoir.", 
             "It is actually possible to convert seawater to freshwater via desalination!"]
 
-blacklist = ['instagram.com', 'facebook.com', 'youtube.com', 'netflix.ca']
+blocklist = ['instagram.com', 'facebook.com', 'youtube.com', 'netflix.ca']
 
 
 // Display random fact from facts array
@@ -267,7 +267,7 @@ document.getElementById("begin").addEventListener("click", () => {
                 min--;
                 sec = 59;
             }
-            if (sec <= 0 && min <= 0) {
+            if (sec < 0 && min <= 0) {
                 $('#restart').show();
                 clearInterval(timer);
             }
