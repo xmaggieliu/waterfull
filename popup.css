@@ -3,8 +3,8 @@ body {
   font-family: "Varela", sans-serif;
 }
 
-/* Desert Background -------------------------------------------- */ 
-.desert {
+/* Background img -------------------------------------------- */ 
+.desert, .paradise {
   position: relative;
 }
 
@@ -41,12 +41,50 @@ body {
   }
 }
 
+
+/* Modal  ---------------------------------------------------------*/
+.modal-header {
+  padding: 0 20px;
+  position: relative;
+  z-index: 10000000000000000;
+  background-color: rgb(196, 234, 251, 70%);
+  padding-bottom: 5px; 
+}
+
+.modal-content {
+  margin: 20px; /* maybe del later?????? and line below too*/
+  background-color: rgb(196, 234, 251);  
+  border: 1px solid #888;
+  width: 600px; 
+  height: 600px;
+  overflow: hidden;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  top: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
 /* Timer -------------------------------------------- */
 #session, #session2 {
   z-index: 100000;
   position: absolute;
   transform: translate(250px, -60px);
-  background-color: rgb(256, 256, 256, 35%);
+  background-color: rgb(256, 256, 256, 70%);
   padding: 10px;
   border-radius: 4px;
 }
@@ -55,6 +93,7 @@ body {
   display: none;
 }
 
+/* Buttons ---------------------------- */
 #waterfull-timer {
   border: #EA633C thick solid;
   border-radius: 8px;
@@ -192,11 +231,7 @@ body {
   }
 }
 
-/* -------------- End of src */
-
-
-
-
+/* ----------------------------------------------------------------------------------- End of src */
 
 /* Waterfall ------------------------------------------ */
 #container {
@@ -212,42 +247,4 @@ body {
 canvas {
   display: block;
   margin: 0 auto;
-}
-
-.modal-header {
-  padding: 0 20px;
-  position: relative;
-  z-index: 10000000000000000;
-  background-color: rgb(196, 234, 251, 50%);
-  padding-bottom: 5px; 
-}
-
-
-/* Modal Content/Box ---------------------------------------------------------*/
-  .modal-content {
-  margin: 20px; /* maybe del later?????? and line below too*/
-  background-color: rgb(196, 234, 251);  
-  border: 1px solid #888;
-  width: 600px; 
-  height: 600px;
-  overflow: hidden;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-  top: 0;
-  right: 0;
-  padding: 20px;
-
-}
-
-.close:hover,
-.close:focus {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
 }

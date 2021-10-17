@@ -242,6 +242,7 @@ document.getElementById("begin").addEventListener("click", () => {
                 min--;
                 sec = 59;
             }
+            
             if (sec < 0 && min <= 0) {
                 $('#restart').show();
                 clearInterval(timer);
