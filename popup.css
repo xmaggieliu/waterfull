@@ -29,15 +29,15 @@ body {
 
 @keyframes pulse {
   0% {
-    transform: scale(1.03);
+    transform: scale(1);
   }
 
   50% {
-    transform: scale(1)
+    transform: scale(0.98)
   }
 
   100% {
-    transform: scale(1.03);
+    transform: scale(1);
   }
 }
 
@@ -199,8 +199,9 @@ body {
 /* Waterfall ------------------------------------------ */
 #container {
   box-shadow: inset 0 4px 0 #524841, 0 -1px 0 #000;
+  border-radius: 5px;
   height: 140px;
-  padding-left: 130px;
+  padding-left: 142px;
   width: 120px;
   position: relative;
   z-index: 100;
@@ -215,6 +216,8 @@ canvas {
   padding: 0 20px;
   position: relative;
   z-index: 10000000000000000;
+  background-color: rgb(196, 234, 251, 50%);
+  padding-bottom: 5px; 
 }
 
 /* Modal Content/Box ---------------------------------------------------------*/
