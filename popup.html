@@ -35,28 +35,29 @@
             <p id="fun-fact"></p>
         </div>
         
-
-        <div id="container">
-            <canvas id="waterfall"></canvas>
-        </div>
-        
-        <div id="session">
-            <p>Enter the duration of your session (min):</p>
-            <input type="number" name="timer" id="input-time" min="1">
-            <button class="btn-time" id="begin" type="button">Begin Session!</button>
-        </div>
-
-        <div id="session2">
-            <p>Time left in current session:</p>
-            <button type="button" id="waterfull-timer">0:00</button>
-            <button class="btn-time" id="restart" type="button">Restart</button>
-        </div>
-        
-        <div id="reservoir">
-            <div class="meter">
-                <span><div id="progress-bar"></div></span> <!--  style="height: 25%"  -->
+        <div id="main">
+            <div id="container">
+                <canvas id="waterfall"></canvas>
             </div>
-            <p id="p-error">Positive integer input only!</p>
+            
+            <div id="session">
+                <p>Enter the duration of your session (min):</p>
+                <input type="number" name="timer" id="input-time" min="1">
+                <button class="btn-time" id="begin" type="button">Begin Session!</button>
+            </div>
+    
+            <div id="session2">
+                <p>Time left in current session:</p>
+                <button type="button" id="waterfull-timer">0:00</button>
+                <button class="btn-time" id="restart" type="button">Restart</button>
+            </div>
+            
+            <div id="reservoir">
+                <div class="meter">
+                    <span><div id="progress-bar"></div></span> <!--  style="height: 25%"  -->
+                </div>
+                <p id="p-error">Positive integer input only!</p>
+            </div>
         </div>
         
         

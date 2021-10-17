@@ -13,12 +13,12 @@ facts = ["Water expands by 9% when it freezes!",
             "A manmade version of a lake is called a reservoir.", 
             "It is actually possible to convert seawater to freshwater via desalination!"]
 
-blocklist = ['instagram.com', 'facebook.com', 'youtube.com', 'netflix.ca']
+const blocklist = ['https://instagram.com/*', 'https://facebook.com/*', 'https://youtube.com/*', 'https://netflix.ca/*']
 
 
 // Display random fact from facts array
 const fact = facts[Math.floor(Math.random() * facts.length)];
-document.getElementById("fun-fact").innerHTML = fact;
+document.getElementById("fun-fact").innerHTML = "Fun fact: " + fact;
 
 
 
@@ -184,49 +184,21 @@ if(isCanvasSupported()){
 
 // ---------------------------------- END OF SRC
 
+function chromeUpdate() {
+   function clearProgress() {
+        clearInterval(timer);
+    }
 
-
-
-
-/* 
-* const pattern1 = "https://twitter.com/*";
-const pattern2 = "https://instagram.com/*";
-
-const filter = {
-  urls: [pattern1, pattern2]
+    browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
 }
-
-function clearProgress() {
-  clearInterval(timer);
-}
-
-browser.tabs.onUpdated.addListener(clearProgress, filter);
-**/
-// function chromeUpdates() {
-//     chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) { 
-//          chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-                // var tab = tabs[0];
-                // var url = new URL(tab.url)
-                // var domain = url.hostname
-//      })
-//              for (int i = blocklist.length; i >= 0; i--)
-//              {
-//                  if (host === blocklist[i])
-//                  {
-                        // clearInterval(timer);
-//                  }
-//              }
-//         })
-
-
-//     });
-
-// }
+    
 
 // Session -------------------------------------------------
 document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
     inputTime = parseInt(inputTime)
+
+    chromeUpdate();
 
     if (Number.isInteger(inputTime) && inputTime > 0) {
         // chromeUpdates();
@@ -257,7 +229,8 @@ document.getElementById("begin").addEventListener("click", () => {
                 sec = 59;
             }
 
-            if (min * frame == inputTime) {
+            console.log(inputTime, (min * 60 + sec) * frame)
+            if ((min * 60 + sec) * frame == inputTime * 60) {
                 frameId = "progress" + frame
                 console.log(frameId)
                 document.getElementById(frameId).style.display = "block";

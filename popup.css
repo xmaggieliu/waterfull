@@ -49,7 +49,9 @@ body {
 /* Modal  ---------------------------------------------------------*/
 .modal-header {
   padding: 0 20px;
-  position: relative;
+  transform: translateX(-0px);
+  position: absolute;
+  width: 560px; 
   z-index: 10000000000000000;
   background-color: rgb(196, 234, 251, 70%);
   padding-bottom: 5px; 
@@ -63,6 +65,18 @@ h1 > img > span, h1 > img {
   vertical-align: middle;
 }
 
+h1 {
+  
+}
+
+#fun-fact {
+  font-style: italic;
+}
+
+#main {
+  margin-top: 200px;
+}
+
 .modal-content {
   margin: 20px; /* maybe del later?????? and line below too*/
   background-color: rgb(196, 234, 251);  
@@ -70,6 +84,7 @@ h1 > img > span, h1 > img {
   width: 600px; 
   height: 600px;
   overflow: hidden;
+  position: relative;
 }
 
 /* The Close Button */
