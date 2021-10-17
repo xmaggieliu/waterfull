@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
 
-        browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
+        chrome.tabs.onUpdated.addListener(clearProgress, blocklist); 
     }
         
 
