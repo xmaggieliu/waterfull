@@ -223,7 +223,6 @@ document.getElementById("begin").addEventListener("click", () => {
         document.querySelectorAll(".progress").forEach(frameElements => {
             frameElements.style.display = "none";            
         });
-        chromeUpdates();
         var min = inputTime - 1;
         var sec = 59;
         var frame = 6;
