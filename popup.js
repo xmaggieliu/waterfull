@@ -191,6 +191,15 @@ function chromeUpdate() {
             frameElements.style.display = "none";            
         });
         $('#restart').show();
+        chrome.runtime.sendMessage('', {
+            type: 'notification',
+            options: {
+            title: 'Paradise lost!',
+            message: 'You went on one of the blocked websites on Waterfull. Progress has been reset. :(',
+            iconUrl: 'icon_80.png',
+            type: 'basic'
+          }
+        });
     }
 
     browser.tabs.onUpdated.addListener(clearProgress, blocklist); 
@@ -198,6 +207,7 @@ function chromeUpdate() {
     
 
 // Session -------------------------------------------------
+
 document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
     inputTime = parseInt(inputTime)
@@ -208,30 +218,25 @@ document.getElementById("begin").addEventListener("click", () => {
         document.querySelectorAll(".progress").forEach(frameElements => {
             frameElements.style.display = "none";            
         });
-        // chromeUpdates();
+        chromeUpdates();
         var min = inputTime - 1;
         var sec = 59;
         var frame = 6;
         $('#session').toggle();
         $('#session2').toggle();
         $('#restart').hide();
-        // timeoutUpdate(inputTime - 1, 59, inputTime);
         var timer = setInterval(function() {
             if (sec < 10) {
                 document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
-                // console.log(min + ":" + "0" + sec);
             }
             else {
                 document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
-                // console.log(min + ":" + sec);
             }
             sec--;
             if (sec >= 0) {
-                // timeoutUpdate(min, sec, inputTime);
                 document.getElementById("progress-bar").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
             }
             else if (min > 0) {
-                // timeoutUpdate(min - 1, 59);
                 min--;
                 sec = 59;
             }
