@@ -211,42 +211,64 @@ if(isCanvasSupported()){
 // }
 
 
-var timeoutUpdate = function(min, sec, inputTime) {
-    setTimeout(function() {
-        if (sec < 10) {
-            document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
-            // console.log(min + ":" + "0" + sec);
-        }
-        else {
-            document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
-            // console.log(min + ":" + sec);
-        }
-        sec--;
-        if (sec >= 0) {
-            timeoutUpdate(min, sec, inputTime);
-            document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
-        }
-        else if (min > 0) {
-            timeoutUpdate(min - 1, 59);
-        }
-        if (sec <= 0 && min <= 0) {
-            $('#restart').show();
-        }
-    }, 1000)
-}
+// var timeoutUpdate = function(min, sec, inputTime) {
+//     setTimeout(function() {
+//         if (sec < 10) {
+//             document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
+//             // console.log(min + ":" + "0" + sec);
+//         }
+//         else {
+//             document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
+//             // console.log(min + ":" + sec);
+//         }
+//         sec--;
+//         if (sec >= 0) {
+//             timeoutUpdate(min, sec, inputTime);
+//             document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
+//         }
+//         else if (min > 0) {
+//             timeoutUpdate(min - 1, 59);
+//         }
+//         if (sec <= 0 && min <= 0) {
+//             $('#restart').show();
+//         }
+//     }, 1000)
+// }
 
 // Session -------------------------------------------------
 document.getElementById("begin").addEventListener("click", () => {
     inputTime = document.getElementById("input-time").value;
     inputTime = parseInt(inputTime)
 
-    // chromeUpdates();
-    
     if (Number.isInteger(inputTime) && inputTime > 0) {
+        // chromeUpdates();
+        var min = inputTime - 1;
+        var sec = 59
         $('#session').toggle();
         $('#session2').toggle();
         $('#restart').hide();
-        timeoutUpdate(inputTime - 1, 59, inputTime);
+        // timeoutUpdate(inputTime - 1, 59, inputTime);
+        var timer = setInterval(function() {
+            if (sec < 10) {
+                document.getElementById("waterfull-timer").innerHTML = min + ":" + "0" + sec;
+                // console.log(min + ":" + "0" + sec);
+            }
+            else {
+                document.getElementById("waterfull-timer").innerHTML = min + ":" + sec;
+                // console.log(min + ":" + sec);
+            }
+            sec--;
+            if (sec >= 0) {
+                timeoutUpdate(min, sec, inputTime);
+                document.getElementById("progress").style.height = 100 * (min * 60 + sec) / (inputTime * 60) + '%';
+            }
+            else if (min > 0) {
+                timeoutUpdate(min - 1, 59);
+            }
+            if (sec <= 0 && min <= 0) {
+                $('#restart').show();
+            }
+        }, 1000)
     }    
     else {
         $('#p-error').fadeIn('fast').delay(1500).fadeOut('fast');

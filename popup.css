@@ -1,7 +1,10 @@
 body {
-  background: rgb(196, 234, 251);
   color: black;
   font-family: "Varela", sans-serif;
+}
+
+.modal-content {
+  background: rgb(196, 234, 251);  
 }
 
 /* Desert Background -------------------------------------------- */ 
