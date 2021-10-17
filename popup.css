@@ -213,12 +213,14 @@ canvas {
 
 .modal-header {
   padding: 0 20px;
+  position: relative;
+  z-index: 10000000000000000;
 }
 
 /* Modal Content/Box ---------------------------------------------------------*/
   .modal-content {
   margin: 20px; /* maybe del later?????? and line below too*/
-  background: rgb(196, 234, 251);  
+  background-color: rgb(196, 234, 251);  
   border: 1px solid #888;
   width: 600px; 
   height: 600px;
